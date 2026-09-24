@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rak Buku Lutfi</title>
+</head>
+<body>
+
+  <!-- HEADER & LANDMARK NAVIGASI -->
+  <header>
+    <h1>Rak Buku Lutfi</h1>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#bagian-1">Daftar Buku</a></li>
+        <li><a href="#bagian-2">Tambah Buku</a></li>
+        <li><a href="#tentang-saya">Tentang Saya</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- LANDMARK KONTEN UTAMA -->
+  <main>
+
+    <!-- SECTION 1: TABEL DATA & GAMBAR -->
+    <section id="bagian-1">
+      <h2>Daftar Koleksi Buku</h2>
+
+      <figure>
+        <img src="koleksi-buku.webp" 
+             alt="Jajaran koleksi buku novel dan pemrograman tersusun rapi di rak kayu." 
+             width="640" 
+             height="360" 
+             loading="lazy">
+        <figcaption>Koleksi buku favorit tersusun rapi di rak kamar saya.</figcaption>
+      </figure>
+
+      <table>
+        <caption>Koleksi Buku di Rak Saya</caption>
+        <thead>
+          <tr>
+            <th scope="col">Judul Buku</th>
+            <th scope="col">Penulis</th>
+            <th scope="col">Tahun Terbit</th>
+            <th scope="col">Status Baca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Clean Code</th>
+            <td>Robert C. Martin</td>
+            <td>2008</td>
+            <td>Selesai</td>
+          </tr>
+          <tr>
+            <th scope="row">Laskar Pelangi</th>
+            <td>Andrea Hirata</td>
+            <td>2005</td>
+            <td>Selesai</td>
+          </tr>
+          <tr>
+            <th scope="row">Atomic Habits</th>
+            <td>James Clear</td>
+            <td>2018</td>
+            <td>Sedang Dibaca</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION 2: FORM -->
+    <section id="bagian-2">
+      <h2>Tambah Koleksi Buku</h2>
+
+      <form action="/simpan" method="post">
+        <p>
+          <label for="judul-buku">Judul Buku:</label>
+          <input type="text" id="judul-buku" name="judul-buku" required>
+        </p>
+        <p>
+          <label for="penulis-buku">Penulis:</label>
+          <input type="text" id="penulis-buku" name="penulis-buku" required>
+        </p>
+        <p>
+          <label for="tahun-terbit">Tahun Terbit:</label>
+          <input type="number" id="tahun-terbit" name="tahun-terbit" min="1900" max="2026" required>
+        </p>
+        <p>
+          <label for="status-baca">Status Baca:</label>
+          <select id="status-baca" name="status-baca" required>
+            <option value="">-- Pilih Status --</option>
+            <option value="Selesai">Selesai</option>
+            <option value="Sedang Dibaca">Sedang Dibaca</option>
+            <option value="Rencana Dibaca">Rencana Dibaca</option>
+          </select>
+        </p>
+        <button type="submit">Simpan Buku</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- LANDMARK FOOTER -->
+  <footer id="tentang-saya">
+    <p>Muhammad Lutfi Fazlullah · 25523031 · 2026</p>
+  </footer>
+
+</body>
+</html>
