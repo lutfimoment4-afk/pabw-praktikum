@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rak Buku Lutfi</title>
   <link rel="stylesheet" href="tokens.css">
-<link rel="stylesheet" href="base.css">
-<link rel="stylesheet" href="layout.css">
-<link rel="stylesheet" href="komponen.css">
-<link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
 </head>
 <body>
 
-  <!-- HEADER & LANDMARK NAVIGASI -->
-  <header>
-    <h1>Rak Buku Lutfi</h1>
+  <!-- HEADER & NAVIGASI -->
+  <header class="navbar">
+    <h1 class="logo">Rak Buku Lutfi</h1>
     <nav aria-label="Navigasi utama">
-      <ul>
+      <ul class="nav-list">
         <li><a href="#bagian-1">Daftar Buku</a></li>
         <li><a href="#bagian-2">Tambah Buku</a></li>
         <li><a href="#tentang-saya">Tentang Saya</a></li>
@@ -24,11 +24,11 @@
     </nav>
   </header>
 
-  <!-- LANDMARK KONTEN UTAMA -->
-  <main>
+  <!-- KONTEN UTAMA -->
+  <main class="container">
 
     <!-- SECTION 1: TABEL DATA & GAMBAR -->
-    <section id="bagian-1">
+    <section id="bagian-1" class="card">
       <h2>Daftar Koleksi Buku</h2>
 
       <figure>
@@ -40,57 +40,75 @@
         <figcaption>Koleksi buku favorit tersusun rapi di rak kamar saya.</figcaption>
       </figure>
 
-      <table>
-        <caption>Koleksi Buku di Rak Saya</caption>
-        <thead>
-          <tr>
-            <th scope="col">Judul Buku</th>
-            <th scope="col">Penulis</th>
-            <th scope="col">Tahun Terbit</th>
-            <th scope="col">Status Baca</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">maaf tuhan,aku hampir menyerah</th>
-            <td>alfialghazi</td>
-            <td>2020</td>
-            <td>Selesai</td>
-          </tr>
-          <tr>
-            <th scope="row">makan mie ayam sebelum mati</th>
-            <td>eka kurniawan</td>
-            <td>2016</td>
-            <td>Selesai</td>
-          </tr>
-          <tr>
-            <th scope="row">laut bercerita</th>
-            <td>leila s. chudori</td>
-            <td>2020</td>
-            <td>Sedang Dibaca</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="table-container">
+        <table>
+          <caption>Koleksi Buku di Rak Saya</caption>
+          <thead>
+            <tr>
+              <th scope="col">Sampul</th>
+              <th scope="col">Judul Buku</th>
+              <th scope="col">Penulis</th>
+              <th scope="col">Tahun Terbit</th>
+              <th scope="col">Status Baca</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="https://via.placeholder.com/80x110?text=Maaf+Tuhan" 
+                     alt="Sampul Maaf Tuhan, Aku Hampir Menyerah" 
+                     class="book-cover">
+              </td>
+              <th scope="row">maaf tuhan,aku hampir menyerah</th>
+              <td>alfialghazi</td>
+              <td>2020</td>
+              <td><span class="badge badge-success">Selesai</span></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://via.placeholder.com/80x110?text=Mie+Ayam" 
+                     alt="Sampul Makan Mie Ayam Sebelum Mati" 
+                     class="book-cover">
+              </td>
+              <th scope="row">makan mie ayam sebelum mati</th>
+              <td>eka kurniawan</td>
+              <td>2016</td>
+              <td><span class="badge badge-success">Selesai</span></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="https://via.placeholder.com/80x110?text=Laut+Bercerita" 
+                     alt="Sampul Laut Bercerita" 
+                     class="book-cover">
+              </td>
+              <th scope="row">laut bercerita</th>
+              <td>leila s. chudori</td>
+              <td>2020</td>
+              <td><span class="badge badge-warning">Sedang Dibaca</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- SECTION 2: FORM -->
-    <section id="bagian-2">
+    <!-- SECTION 2: FORM (Akan berada tepat di bawah Section 1) -->
+    <section id="bagian-2" class="card">
       <h2>Tambah Koleksi Buku</h2>
 
       <form action="/simpan" method="post">
-        <p>
+        <div class="form-group">
           <label for="judul-buku">Judul Buku:</label>
           <input type="text" id="judul-buku" name="judul-buku" required>
-        </p>
-        <p>
+        </div>
+        <div class="form-group">
           <label for="penulis-buku">Penulis:</label>
           <input type="text" id="penulis-buku" name="penulis-buku" required>
-        </p>
-        <p>
+        </div>
+        <div class="form-group">
           <label for="tahun-terbit">Tahun Terbit:</label>
           <input type="number" id="tahun-terbit" name="tahun-terbit" min="1900" max="2026" required>
-        </p>
-        <p>
+        </div>
+        <div class="form-group">
           <label for="status-baca">Status Baca:</label>
           <select id="status-baca" name="status-baca" required>
             <option value="">-- Pilih Status --</option>
@@ -98,14 +116,14 @@
             <option value="Sedang Dibaca">Sedang Dibaca</option>
             <option value="Rencana Dibaca">Rencana Dibaca</option>
           </select>
-        </p>
+        </div>
         <button type="submit">Simpan Buku</button>
       </form>
     </section>
 
   </main>
 
-  <!-- LANDMARK FOOTER -->
+  <!-- FOOTER -->
   <footer id="tentang-saya">
     <p>Muhammad Lutfi Fazlullah · 25523031 · 2026</p>
   </footer>
