@@ -1,5 +1,4 @@
 @media (prefers-color-scheme: dark) {
-
     :root {
         --bg: #121212;
         --fg: #ffffff;
@@ -9,5 +8,4 @@
         --danger: #f87171;
         --focus: #fbbf24;
     }
-
 }
