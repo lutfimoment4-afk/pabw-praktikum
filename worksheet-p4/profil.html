@@ -1,147 +1,109 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Profil Saya</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="tokens.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="komponen.css">
-    <link rel="stylesheet" href="tema.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rak Buku Lutfi</title>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="header-baris">
+  <!-- HEADER & LANDMARK NAVIGASI -->
+  <header>
+    <h1>Rak Buku Lutfi</h1>
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#bagian-1">Daftar Buku</a></li>
+        <li><a href="#bagian-2">Tambah Buku</a></li>
+        <li><a href="#tentang-saya">Tentang Saya</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <h1>Profil Saya</h1>
+  <!-- LANDMARK KONTEN UTAMA -->
+  <main>
 
-            <nav>
-                <ul>
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
-                </ul>
-            </nav>
+    <!-- SECTION 1: TABEL DATA & GAMBAR -->
+    <section id="bagian-1">
+      <h2>Daftar Koleksi Buku</h2>
 
-        </div>
-    </header>
+      <figure>
+        <img src="https://th.bing.com/th/id/OIP.fZkhNqd-oDkOXmeh0xnxagHaE8?w=253&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+             alt="Jajaran koleksi buku novel dan pemrograman tersusun rapi di rak kayu." 
+             width="640" 
+             height="360" 
+             loading="lazy">
+        <figcaption>Koleksi buku favorit tersusun rapi di rak kamar saya.</figcaption>
+      </figure>
 
+      <table>
+        <caption>Koleksi Buku di Rak Saya</caption>
+        <thead>
+          <tr>
+            <th scope="col">Judul Buku</th>
+            <th scope="col">Penulis</th>
+            <th scope="col">Tahun Terbit</th>
+            <th scope="col">Status Baca</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">maaf tuhan,aku hampir menyerah</th>
+            <td>alfialghazi</td>
+            <td>2020</td>
+            <td>Selesai</td>
+          </tr>
+          <tr>
+            <th scope="row">makan mie ayam sebelum mati</th>
+            <td>eka kurniawan</td>
+            <td>2016</td>
+            <td>Selesai</td>
+          </tr>
+          <tr>
+            <th scope="row">laut bercerita</th>
+            <td>leila s. chudori</td>
+            <td>2020</td>
+            <td>Sedang Dibaca</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <!-- ISI UTAMA -->
-    <main>
+    <!-- SECTION 2: FORM -->
+    <section id="bagian-2">
+      <h2>Tambah Koleksi Buku</h2>
 
-        <section id="profil">
-            <h2>Tentang Saya</h2>
-
-            <p>
-                Halo! Saya adalah mahasiswa Informatika yang
-                suka belajar hal baru dan bermain sepak bola.
-            </p>
-        </section>
-
-
-        <!-- KATALOG / KARTU -->
-        <section class="katalog">
-
-            <article class="kartu">
-                <h3>Data Diri</h3>
-
-                <p>
-                    <strong>Nama:</strong>
-                    Muhammad Lutfi Fazlullah
-                </p>
-
-                <p>
-                    <strong>Program Studi:</strong>
-                    Informatika
-                </p>
-
-                <p>
-                    <strong>Fakultas:</strong>
-                    Teknik Industri
-                </p>
-
-                <p>
-                    <strong>Asal:</strong>
-                    Lampung
-                </p>
-            </article>
-
-
-            <article class="kartu">
-                <h3>Hobi</h3>
-
-                <ul>
-                    <li>Sepak bola</li>
-                    <li>Jamaah 34</li>
-                    <li>Teknologi dan pemrograman</li>
-                </ul>
-            </article>
-
-
-            <article class="kartu">
-                <h3>Kontak</h3>
-
-                <form>
-
-                    <label for="nama">
-                        Nama
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nama"
-                        name="nama"
-                        required
-                    >
-
-                    <label for="email">
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                    >
-
-                    <label for="pesan">
-                        Pesan
-                    </label>
-
-                    <textarea
-                        id="pesan"
-                        name="pesan"
-                        rows="4"
-                        required
-                    ></textarea>
-
-                    <button type="submit">
-                        Kirim
-                    </button>
-
-                </form>
-            </article>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
+      <form action="/simpan" method="post">
         <p>
-            © 2026 Muhammad Lutfi Fazlullah
+          <label for="judul-buku">Judul Buku:</label>
+          <input type="text" id="judul-buku" name="judul-buku" required>
         </p>
-    </footer>
+        <p>
+          <label for="penulis-buku">Penulis:</label>
+          <input type="text" id="penulis-buku" name="penulis-buku" required>
+        </p>
+        <p>
+          <label for="tahun-terbit">Tahun Terbit:</label>
+          <input type="number" id="tahun-terbit" name="tahun-terbit" min="1900" max="2026" required>
+        </p>
+        <p>
+          <label for="status-baca">Status Baca:</label>
+          <select id="status-baca" name="status-baca" required>
+            <option value="">-- Pilih Status --</option>
+            <option value="Selesai">Selesai</option>
+            <option value="Sedang Dibaca">Sedang Dibaca</option>
+            <option value="Rencana Dibaca">Rencana Dibaca</option>
+          </select>
+        </p>
+        <button type="submit">Simpan Buku</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- LANDMARK FOOTER -->
+  <footer id="tentang-saya">
+    <p>Muhammad Lutfi Fazlullah · 25523031 · 2026</p>
+  </footer>
 
 </body>
 </html>
