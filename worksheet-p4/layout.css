@@ -1,0 +1,47 @@
+header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-baris {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.katalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.kartu {
+    flex: 1 1 16rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface);
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+}
