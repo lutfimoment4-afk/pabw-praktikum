@@ -1,63 +1,66 @@
 // ==========================================
 // LEMBAR B: Data Profil dan Variabel (const & let)
 // ==========================================
-const namaPemilik = "Muhammad Lutfi Fazlullah";
-const peranPemilik = "Mahasiswa Informatika";
-let statusAktif = "Menjelajahi koleksi buku";
+const namaLengkap = "Muhammad Lutfi Fazlullah";
+const peranPengguna = "Mahasiswa Informatika — NIM: 25523031";
+const daftarKeahlian = ["HTML", "CSS", "JavaScript"];
+let jumlahProyek = 3;
 
-const profilRak = {
-  nama: namaPemilik,
-  peran: peranPemilik,
-  kategoriFavorit: ["Pemrograman Java", "Algoritma", "Struktur Data", "Web Development"]
+const profil = {
+  nama: namaLengkap,
+  peran: peranPengguna,
+  keahlian: daftarKeahlian,
 };
 
-// Menggunakan Template Literal
-const infoRingkas = `Rak buku milik ${profilRak.nama} (${profilRak.peran}) memiliki ${profilRak.kategoriFavorit.length} kategori utama.`;
-console.log(infoRingkas);
+// Menggunakan Template Literal (Lembar B.2)
+const kalimatPerkenalan = `Nama saya ${profil.nama}, seorang ${profil.peran} dengan ${profil.keahlian.length} keahlian utama.`;
+console.log(kalimatPerkenalan);
 
 
 // ==========================================
 // LEMBAR C: Dua Fungsi Murni (Pure Functions)
 // ==========================================
 
-// 1. Fungsi murni untuk menyusun kalimat perkenalan pemilik rak
-function buatPerkenalanRak({ nama, peran }) {
-  return `Pemilik Rak: ${nama} — Status: ${peran}`;
+// 1. Fungsi murni untuk menyusun kalimat perkenalan dari satu object (Lembar C.1)
+function buatPerkenalan({ nama, peran }) {
+  return `${nama} — ${peran}`;
 }
 
-// 2. Fungsi murni (arrow function) untuk merapikan daftar kategori keahlian/buku
-const formatKategoriBuku = (daftarKategori) => daftarKategori.join(" · ");
+// 2. Fungsi murni (arrow function) untuk merapikan daftar keahlian menjadi satu baris teks (Lembar C.1)
+const formatKeahlian = (daftar) => daftar.join(" · ");
 
-// Menguji fungsi di Console
-console.log(buatPerkenalanRak(profilRak));
-console.log("Kategori:", formatKategoriBuku(profilRak.kategoriFavorit));
+console.log(buatPerkenalan(profil));
+console.log(formatKeahlian(profil.keahlian));
 
 
 // ==========================================
-// LEMBAR D: Struktur Data (Array of Objects) & Array Methods
+// LEMBAR D: Struktur Data & Array Methods
 // ==========================================
+
+// Data buku sesuai tampilan web Rak Buku Lutfi
 const daftarBuku = [
-  { id: 1, judul: "Pemrograman Berorientasi Objek Java", penulis: "Budi Raharjo", tahun: 2024, selesaiBaca: true },
-  { id: 2, judul: "Algoritma dan Struktur Data dalam Java", penulis: "Rinaldi Munir", tahun: 2023, selesaiBaca: true },
-  { id: 3, judul: "Desain Web Modern & WCAG", penulis: "Andi Prasetyo", tahun: 2025, selesaiBaca: false },
-  { id: 4, judul: "Jaringan Komputer dan Cisco Packet Tracer", penulis: "Dian Sastrowardoyo", tahun: 2026, selesaiBaca: false }
+  { judul: "maaf tuhan, aku hampir menyerah", penulis: "alfialghazi", tahun: 2020, status: "Selesai" },
+  { judul: "makan mie ayam sebelum mati", penulis: "eka kurniawan", tahun: 2016, status: "Selesai" },
+  { judul: "laut bercerita", penulis: "leila s. chudori", tahun: 2020, status: "Sedang Dibaca" }
 ];
 
-// Menampilkan seluruh daftar buku sebagai tabel di Console
-console.log("--- TABEL SELURUH BUKU ---");
+const daftarProyek = [
+  { judul: "Rak Buku Lutfi", tahun: 2026, selesai: true },
+  { judul: "Katalog Produk Web", tahun: 2026, selesai: false }
+];
+
+// Yang harus tercetak di Console (Lembar D.3)
+console.table(profil.keahlian);
 console.table(daftarBuku);
 
-// 1. Menggunakan FILTER: Menyaring buku yang sudah selesai dibaca
-const bukuSelesai = daftarBuku.filter((buku) => buku.selesaiBaca);
-console.log("--- BUKU YANG SUDAH SELESAI DIBACA ---");
+// Filter buku yang statusnya Selesai
+const bukuSelesai = daftarBuku.filter((buku) => buku.status === "Selesai");
 console.table(bukuSelesai);
 
-// 2. Menggunakan FIND: Mencari satu buku spesifik berdasarkan judul
-const bukuDicari = daftarBuku.find((buku) => buku.judul.includes("Java"));
-console.log("--- HASIL PENCARIAN (FIND) ---");
+// Find mencari satu buku berdasarkan penulis
+const bukuDicari = daftarBuku.find((buku) => buku.penulis === "eka kurniawan");
 console.log(bukuDicari);
 
-// 3. Menggunakan MAP: Membuat array baru berisi judul buku saja (tanpa mengubah data asli)
-const judulBukuSaja = daftarBuku.map((buku) => buku.judul);
-console.log("--- DAFTAR JUDUL BUKU (MAP) ---");
-console.table(judulBukuSaja);
+// Map mengubah array proyek menjadi array judul saja
+const katalogMap = daftarProyek.map((proyek) => proyek.judul);
+console.table(katalogMap);
