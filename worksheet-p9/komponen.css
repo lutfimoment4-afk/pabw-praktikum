@@ -1,0 +1,69 @@
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--focus);
+}
+
+.pesan-galat {
+    color: var(--danger);
+}
+
+.card {
+  padding: var(--space-lg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md); /* Menggunakan token spasi */
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Styling Sel Tabel agar posisi teks dan gambar sejajar vertikal */
+table th, table td {
+  padding: var(--space-sm) var(--space-md);
+  vertical-align: middle; /* Menjaga teks Penulis, Tahun & Status tepat di tengah secara vertikal */
+  text-align: center;     /* Menyesuaikan alignment sesuai gambar Anda */
+}
+
+/* Ukuran Gambar Sampul Buku yang Seragam */
+.book-cover {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+  display: block;
+  margin: 0 auto; /* Mengetengahkan gambar di dalam sel tabel */
+}

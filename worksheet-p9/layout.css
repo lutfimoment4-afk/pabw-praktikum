@@ -1,0 +1,130 @@
+header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-baris {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.katalog {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.kartu {
+    flex: 1 1 16rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface);
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+}
+
+/* Container Utama */
+.container {
+  padding: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 1 & 2. Navbar responsif */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Judul di kiri, menu di kanan */
+  align-items: center;
+  flex-wrap: wrap; /* Pada layar sempit, menu turun baris & tidak terpotong */
+  padding: var(--space-md);
+  gap: var(--space-md);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Layout Kartu (Kartu turun menjadi satu kolom, tanpa gulir mendatar) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Gambar & Tabel agar tidak overflow (mencegah gulir mendatar) */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.table-container {
+  overflow-x: auto; /* Mencegah seluruh halaman bergulir mendatar jika tabel sangat lebar */
+}
+
+/* Container Utama */
+.container {
+  display: flex;
+  flex-direction: column; /* Menyusun section ke bawah (vertikal) */
+  gap: var(--space-xl);  /* Menggunakan token spasi untuk jarak antar section */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+/* Navbar tetap responsif sesuai kriteria sebelumnya */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Judul di kiri, menu di kanan */
+  align-items: center;
+  flex-wrap: wrap;               /* Turun baris jika layar sempit */
+  padding: var(--space-md);
+  gap: var(--space-md);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Memastikan gambar & tabel tidak meluapkan layar */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
