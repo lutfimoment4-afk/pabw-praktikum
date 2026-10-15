@@ -37,17 +37,31 @@ console.log(formatKeahlian(profil.keahlian));
 // LEMBAR D: Struktur Data & Array Methods
 // ==========================================
 
-// Data buku sesuai tampilan web Rak Buku Lutfi
-const daftarBuku = [
-  { judul: "maaf tuhan, aku hampir menyerah", penulis: "alfialghazi", tahun: 2020, status: "Selesai" },
-  { judul: "makan mie ayam sebelum mati", penulis: "eka kurniawan", tahun: 2016, status: "Selesai" },
-  { judul: "laut bercerita", penulis: "leila s. chudori", tahun: 2020, status: "Sedang Dibaca" }
+// Data buku untuk ditampilkan pada halaman Rak Buku Lutfi
+export const daftarBuku = [
+  {
+    judul: "maaf tuhan, aku hampir menyerah",
+    penulis: "alfialghazi",
+    tahun: 2020,
+    status: "Selesai",
+    sampul: "https://cdn.gramedia.com/uploads/items/MAAF_TUHAN_AKU_HAMPIR_MENYERAH.jpg"
+  },
+  {
+    judul: "makan mie ayam sebelum mati",
+    penulis: "eka kurniawan",
+    tahun: 2016,
+    status: "Selesai",
+    sampul: "https://tse1.mm.bing.net/th/id/OIP.yaGB65EmRT_7qCXkXMRo2wHaLK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    judul: "laut bercerita",
+    penulis: "leila s. chudori",
+    tahun: 2020,
+    status: "Sedang Dibaca",
+    sampul: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1516602134i/36393774.jpg"
+  }
 ];
 
-const daftarProyek = [
-  { judul: "Rak Buku Lutfi", tahun: 2026, selesai: true },
-  { judul: "Katalog Produk Web", tahun: 2026, selesai: false }
-];
 
 // Yang harus tercetak di Console (Lembar D.3)
 console.table(profil.keahlian);
@@ -62,5 +76,5 @@ const bukuDicari = daftarBuku.find((buku) => buku.penulis === "eka kurniawan");
 console.log(bukuDicari);
 
 // Map mengubah array proyek menjadi array judul saja
-const katalogMap = daftarProyek.map((proyek) => proyek.judul);
+const katalogMap = daftarBuku.map((buku) => buku.judul);
 console.table(katalogMap);

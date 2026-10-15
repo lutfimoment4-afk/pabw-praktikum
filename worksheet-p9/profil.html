@@ -2,123 +2,69 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
   <title>Rak Buku Lutfi</title>
-  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="token.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
 </head>
 <body>
-
-  <!-- HEADER & NAVIGASI -->
-  <header class="navbar">
-    <h1 class="logo">Rak Buku Lutfi</h1>
+  <header class="site-header">
+    <a class="brand" href="#beranda" aria-label="Rak Buku Lutfi, beranda"><span class="brand-icon" aria-hidden="true">R</span><span>Rak Buku Lutfi</span></a>
     <nav aria-label="Navigasi utama">
-      <ul class="nav-list">
-        <li><a href="#bagian-1">Daftar Buku</a></li>
-        <li><a href="#bagian-2">Tambah Buku</a></li>
-        <li><a href="#tentang-saya">Tentang Saya</a></li>
-      </ul>
+      <a href="#daftar-buku">Koleksi</a>
+      <a href="#tambah-buku">Tambah buku</a>
+      <a href="#tentang-saya">Tentang</a>
     </nav>
+    <a class="header-cta" href="#tambah-buku">+ Buku baru</a>
   </header>
 
-  <!-- KONTEN UTAMA -->
-  <main class="container">
-
-    <!-- SECTION 1: TABEL DATA & GAMBAR -->
-    <!-- TABEL KOLEKSI BUKU DENGAN KOLOM SAMPUL -->
-      <div class="table-container">
-        <table>
-          <caption>Koleksi Buku di Rak Saya</caption>
-          <thead>
-            <tr>
-              <!-- 1. Tambahkan header kolom 'Sampul' -->
-              <th scope="col">Sampul</th> 
-              <th scope="col">Judul Buku</th>
-              <th scope="col">Penulis</th>
-              <th scope="col">Tahun Terbit</th>
-              <th scope="col">Status Baca</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <!-- 2. Tambahkan baris gambar untuk Buku 1 -->
-              <td>
-                <img src="https://cdn.gramedia.com/uploads/items/MAAF_TUHAN_AKU_HAMPIR_MENYERAH.jpg" 
-                     alt="Sampul Maaf Tuhan, Aku Hampir Menyerah" 
-                     class="book-cover">
-              </td>
-              <th scope="row">maaf tuhan,aku hampir menyerah</th>
-              <td>alfialghazi</td>
-              <td>2020</td>
-              <td>Selesai</td>
-            </tr>
-            <tr>
-              <!-- 3. Tambahkan baris gambar untuk Buku 2 -->
-              <td>
-                <img src="https://tse1.mm.bing.net/th/id/OIP.yaGB65EmRT_7qCXkXMRo2wHaLK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
-                     alt="Sampul Makan Mie Ayam Sebelum Mati" 
-                     class="book-cover">
-              </td>
-              <th scope="row">makan mie ayam sebelum mati</th>
-              <td>eka kurniawan</td>
-              <td>2016</td>
-              <td>Selesai</td>
-            </tr>
-            <tr>
-              <!-- 4. Tambahkan baris gambar untuk Buku 3 -->
-              <td>
-                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1516602134i/36393774.jpg" 
-                     alt="Sampul Laut Bercerita" 
-                     class="book-cover">
-              </td>
-              <th scope="row">laut bercerita</th>
-              <td>leila s. chudori</td>
-              <td>2020</td>
-              <td>Sedang Dibaca</td>
-            </tr>
-          </tbody>
-        </table>
+  <main id="beranda" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> RUANG KECIL UNTUK CERITA BESAR</p>
+        <h1 id="hero-title">Buku yang baik,<br><span>teman yang baik.</span></h1>
+        <p class="hero-description">Selamat datang di rak bacaku. Tempat menyimpan cerita yang pernah singgah dan cerita yang menunggu untuk dibuka.</p>
+        <a class="hero-link" href="#daftar-buku">Jelajahi koleksi <span aria-hidden="true">↓</span></a>
       </div>
-    <!-- SECTION 2: FORM (Akan berada tepat di bawah Section 1) -->
-    <section id="bagian-2" class="card">
-      <h2>Tambah Koleksi Buku</h2>
-
-      <form action="/simpan" method="post">
-        <div class="form-group">
-          <label for="judul-buku">Judul Buku:</label>
-          <input type="text" id="judul-buku" name="judul-buku" required>
-        </div>
-        <div class="form-group">
-          <label for="penulis-buku">Penulis:</label>
-          <input type="text" id="penulis-buku" name="penulis-buku" required>
-        </div>
-        <div class="form-group">
-          <label for="tahun-terbit">Tahun Terbit:</label>
-          <input type="number" id="tahun-terbit" name="tahun-terbit" min="1900" max="2026" required>
-        </div>
-        <div class="form-group">
-          <label for="status-baca">Status Baca:</label>
-          <select id="status-baca" name="status-baca" required>
-            <option value="">-- Pilih Status --</option>
-            <option value="Selesai">Selesai</option>
-            <option value="Sedang Dibaca">Sedang Dibaca</option>
-            <option value="Rencana Dibaca">Rencana Dibaca</option>
-          </select>
-        </div>
-        <button type="submit">Simpan Buku</button>
-      </form>
+      <img class="hero-image" src="assets/koleksi-buku.png" alt="Kolase enam sampul buku">
     </section>
 
+    <section id="daftar-buku" class="collection" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">CATATAN BACA SAYA</p><h2 id="collection-title">Koleksi buku</h2></div>
+        <span class="collection-count">RAK PRIBADI <span>✳</span></span>
+      </div>
+      <div id="filter" class="filter" role="group" aria-label="Filter status buku">
+        <button type="button" data-status="all" aria-pressed="true">Semua buku</button>
+        <button type="button" data-status="Selesai" aria-pressed="false">Selesai</button>
+        <button type="button" data-status="Sedang Dibaca" aria-pressed="false">Sedang dibaca</button>
+        <button type="button" data-status="Rencana Dibaca" aria-pressed="false">Masuk daftar</button>
+      </div>
+      <ul id="list" class="book-grid" aria-live="polite"></ul>
+      <p id="empty" class="empty-state" hidden>Belum ada buku dengan status ini. Coba pilih filter lain.</p>
+    </section>
+
+    <section id="tambah-buku" class="add-section" aria-labelledby="form-title">
+      <div class="add-intro"><p class="eyebrow">SELALU ADA RUANG</p><h2 id="form-title">Ada cerita baru<br>di rakmu?</h2><p>Tambahkan buku yang sedang kamu baca atau ingin kamu baca berikutnya.</p><div class="little-shelf" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
+      <form id="book-form" class="book-form" novalidate>
+        <div class="form-heading"><h3>Tambah ke koleksi</h3><p>Isi detail buku di bawah ini.</p></div>
+        <div class="form-group"><label for="judul-buku">Judul buku</label><input type="text" id="judul-buku" name="judul-buku" placeholder="Contoh: Laut Bercerita" required aria-describedby="judul-error"><p id="judul-error" class="field-error" hidden></p></div>
+        <div class="form-group"><label for="penulis-buku">Nama penulis</label><input type="text" id="penulis-buku" name="penulis-buku" placeholder="Contoh: Leila S. Chudori" required aria-describedby="penulis-error"><p id="penulis-error" class="field-error" hidden></p></div>
+        <div class="form-row">
+          <div class="form-group"><label for="tahun-terbit">Tahun terbit</label><input type="number" id="tahun-terbit" name="tahun-terbit" min="1900" max="2026" placeholder="2024" required aria-describedby="tahun-error"><p id="tahun-error" class="field-error" hidden></p></div>
+          <div class="form-group"><label for="status-baca">Status baca</label><select id="status-baca" name="status-baca" required aria-describedby="status-error"><option value="">Pilih status</option><option value="Selesai">Selesai</option><option value="Sedang Dibaca">Sedang dibaca</option><option value="Rencana Dibaca">Rencana dibaca</option></select><p id="status-error" class="field-error" hidden></p></div>
+        </div>
+        <button id="submit-button" class="submit-button" type="submit" disabled>Simpan buku <span aria-hidden="true">↗</span></button>
+        <p id="success-message" class="success-message" role="status" hidden></p>
+      </form>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer id="tentang-saya">
-    <p>Muhammad Lutfi Fazlullah · 25523031 · 2026</p>
-  </footer>
-  <script type="module" src="js/app.js"></script>
-
+  <footer id="tentang-saya"><a class="brand footer-brand" href="#beranda"><span class="brand-icon" aria-hidden="true">R</span><span>Rak Buku Lutfi</span></a><p>Dibuat dengan tenang, untuk cerita yang tinggal lebih lama.</p><span class="footer-credit">MUHAMMAD LUTFI FAZLULLAH · 25523031</span></footer>
+  <script type="module" src="js/dom.js"></script>
 </body>
 </html>
