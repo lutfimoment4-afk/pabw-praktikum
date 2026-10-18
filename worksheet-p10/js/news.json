@@ -1,0 +1,20 @@
+
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Learning JavaScript",
+      "description": "Understanding asynchronous JavaScript."
+    },
+    {
+      "id": 2,
+      "title": "Introduction to Web Development",
+      "description": "Learning how to build web applications."
+    },
+    {
+      "id": 3,
+      "title": "Working with JSON",
+      "description": "Reading and processing JSON data."
+    }
+  ]
+}
