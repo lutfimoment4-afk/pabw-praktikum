@@ -78,4 +78,52 @@ console.log(bukuDicari);
 // Map mengubah array proyek menjadi array judul saja
 const katalogMap = daftarBuku.map((buku) => buku.judul);
 console.table(katalogMap);
+
 import { fetchNews } from './api.js';
+
+const newsContainer = document.querySelector('#news-list');
+const newsStatus = document.querySelector('#news-status');
+
+function renderNews(articles) {
+  newsContainer.textContent = '';
+
+  if (articles.length === 0) {
+    newsStatus.textContent = 'No news yet.';
+    return;
+  }
+
+  articles.forEach(function (article) {
+    const card = document.createElement('article');
+    const heading = document.createElement('h3');
+    const description = document.createElement('p');
+
+    heading.textContent = article.title;
+    description.textContent = article.description;
+
+    card.appendChild(heading);
+    card.appendChild(description);
+    newsContainer.appendChild(card);
+  });
+
+  newsStatus.textContent = 'News loaded successfully.';
+}
+
+async function initNews() {
+  newsStatus.textContent = 'Loading news...';
+
+  try {
+    const data = await fetchNews();
+
+    if (!Array.isArray(data.articles)) {
+      throw new Error('Invalid news data format.');
+    }
+
+    renderNews(data.articles);
+  } catch (error) {
+    newsContainer.textContent = '';
+    newsStatus.textContent =
+      'Failed to load news: ' + error.message;
+  }
+}
+
+initNews();
