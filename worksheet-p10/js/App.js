@@ -78,3 +78,4 @@ console.log(bukuDicari);
 // Map mengubah array proyek menjadi array judul saja
 const katalogMap = daftarBuku.map((buku) => buku.judul);
 console.table(katalogMap);
+import { fetchNews } from './api.js';
