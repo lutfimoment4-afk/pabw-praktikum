@@ -1,0 +1,14 @@
+:root {
+  color-scheme: dark;
+  --ink: #f1f2f3;
+  --muted: #a3a6ac;
+  --paper: #08090b;
+  --white: #111317;
+  --line: #24272d;
+  --green: #0878f9;
+  --green-dark: #0065d8;
+  --rust: #edb46b;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, Helvetica, sans-serif;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+}
